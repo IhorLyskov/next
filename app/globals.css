@@ -30,10 +30,6 @@ header > a:hover {
   text-decoration: underline;
 }
 
-footer {
-  text-align: center;
-}
-
 h1 {
   text-align: center;
   margin-top: 0;
@@ -63,4 +59,20 @@ main a:hover {
 .active {
   color: var(--color-active);
   cursor: default;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+}
+
+form button {
+  background-color: var(--color-active);
+  cursor: pointer;
+  color: white;
+  border: none;
+}
+
+input[type='search'] {
+  padding: 0.5rem 1rem;
 }

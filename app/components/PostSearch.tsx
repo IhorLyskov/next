@@ -1,6 +1,7 @@
 'use client';
 import { useState, FormEventHandler } from 'react';
 import { getPostsBySearch } from '../services/getPosts';
+import { log } from 'console';
 
 type Props = {
   onSearch: (value: any[]) => void;
@@ -11,8 +12,8 @@ export const PostSearch = ({ onSearch }: Props) => {
 
   const handleSearch: FormEventHandler<HTMLFormElement> = async event => {
     event.preventDefault();
-
     const posts = await getPostsBySearch(search);
+    console.log('posts', posts);
     onSearch(posts);
   };
 
