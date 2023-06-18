@@ -14,11 +14,14 @@ type Props = {
 
 export const Navigation = ({ navLinks }: Props) => {
   const pathname = usePathname();
+  const blog = '/blog';
 
   return (
     <>
       {navLinks.map(link => {
-        const isActive = pathname === link.href;
+        const isActive =
+          (pathname.slice(0, 5) === blog && link.href === blog) ||
+          pathname === link.href;
         return (
           <Link
             key={link.label}
