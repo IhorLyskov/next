@@ -15,7 +15,6 @@ type Props = {
 export const Navigation = ({ navLinks }: Props) => {
   const pathname = usePathname();
   const blog = '/blog';
-
   return (
     <>
       {navLinks.map(link => {
