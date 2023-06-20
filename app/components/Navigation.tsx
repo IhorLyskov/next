@@ -16,6 +16,7 @@ export const Navigation = ({ navLinks }: Props) => {
   let pathname = usePathname();
   const len = pathname.lastIndexOf('/');
   if (len) pathname = pathname.slice(0, len);
+
   return (
     <>
       {navLinks.map(link => {

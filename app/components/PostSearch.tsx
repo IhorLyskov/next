@@ -13,7 +13,6 @@ export const PostSearch = ({ onSearch }: Props) => {
   const handleSearch: FormEventHandler<HTMLFormElement> = async event => {
     event.preventDefault();
     const posts = await getPostsBySearch(search);
-    console.log('posts', posts);
     onSearch(posts);
   };
 
