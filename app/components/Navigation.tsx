@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useSession, signOut } from 'next-auth/react';
 
 type NavLink = {
   label: string;
@@ -14,8 +15,11 @@ type Props = {
 
 export const Navigation = ({ navLinks }: Props) => {
   let pathname = usePathname();
+  const session = useSession();
+
   const len = pathname.lastIndexOf('/');
   if (len) pathname = pathname.slice(0, len);
+  const isActiveProfile = pathname === '/profile';
 
   return (
     <>
@@ -31,6 +35,18 @@ export const Navigation = ({ navLinks }: Props) => {
           </Link>
         );
       })}
+      {session?.data && (
+        <Link className={isActiveProfile ? 'active' : ''} href="/profile">
+          Profile
+        </Link>
+      )}
+      {session?.data ? (
+        <Link href="#" onClick={() => signOut({ callbackUrl: '/' })}>
+          Sign Out
+        </Link>
+      ) : (
+        <Link href="/api/auth/signin">Sign In</Link>
+      )}
     </>
   );
 };

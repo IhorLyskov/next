@@ -76,3 +76,11 @@ form button {
 input[type='search'] {
   padding: 0.5rem 1rem;
 }
+
+footer {
+  text-align: center;
+}
+
+img {
+  margin: 0 auto;
+}
