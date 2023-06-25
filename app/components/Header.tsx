@@ -1,9 +1,10 @@
 import { Navigation } from './Navigation';
 
 const navItems = [
-  { label: 'Home', href: '/' },
-  { label: 'Blog', href: '/blog' },
-  { label: 'About', href: '/about' },
+  { label: 'Home', href: '/', session: false },
+  { label: 'Blog', href: '/blog', session: true },
+  { label: 'About', href: '/about', session: false },
+  { label: 'Profile', href: '/profile', session: true },
 ];
 export const TheHeader = () => {
   return (
