@@ -3,7 +3,9 @@ import { getServerSession } from 'next-auth/next';
 import Image from 'next/image';
 
 export default async function Profile() {
+  console.log('Profile');
   const session = await getServerSession(authConfig);
+  console.log('profile session', session);
 
   const imageStyle = {
     borderRadius: '50%',

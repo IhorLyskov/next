@@ -17,15 +17,15 @@ type Props = {
 export const Navigation = ({ navLinks }: Props) => {
   let pathname = usePathname();
   const session = useSession();
-  console.log(session);
   const len = pathname.lastIndexOf('/');
   if (len) pathname = pathname.slice(0, len);
-  const isActiveProfile = pathname === '/profile';
 
   return (
     <>
       {navLinks.map(link => {
         const isActive = pathname === link.href;
+        console.log(session);
+
         return (
           (!link.session || (link.session && session?.data)) && (
             <Link
