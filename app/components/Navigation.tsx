@@ -40,10 +40,10 @@ export const Navigation = ({ navLinks }: Props) => {
       })}
       {session?.data ? (
         <Link href="#" onClick={() => signOut({ callbackUrl: '/' })}>
-          Sign Out
+          SignOut
         </Link>
       ) : (
-        <Link href="/api/auth/signin">Sign In</Link>
+        <Link href="/api/auth/signin">SignIn</Link>
       )}
     </>
   );
